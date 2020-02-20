@@ -7,6 +7,8 @@
 - `video.py`
 This is the main program. You can change the userlist like adding new twitter user's screen names or change the number of tweets. During the run time, program will create a temp directaries to store pictures for diffent users, after that program will delete them. The only out put is the videos.
 
+- `test_video.py`
+
 - `compress.py` 
 This is the interface of a single tweets to video task.
 

@@ -13,8 +13,8 @@ This is the interface of a single tweets to video task.
 - `tw2video.py` 
 This is the kernel part of the program, includes all the details.
 
--`defult.ttf` and `font2.ttf`
+- `defult.ttf` and `font2.ttf`
 These are fonts that are used to make the video.
 
--`.avi` files
+- `.avi` files
 These are the example out puts of the program.

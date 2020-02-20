@@ -55,6 +55,9 @@ def compressVideo(userlist,numOfTweets):
     print(q.queue)
     print(f'thread_list:{thread_list}')
     print('end')
+    
+    return 0
+
 Compressor1 = VideoCompressor()
 u1 = ['@Shakespeare','@realDonaldTrump', '@Literature', '@langston_poems']
 compressVideo(u1,10)

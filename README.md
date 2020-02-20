@@ -1,15 +1,17 @@
 # video-Suli-Hu
-1. Completed the python program to convert Arabic Numerals to Roman Numerals and created a test python file.
-2. Used `flake8` linter to check the coding style by GithubAction.
-3. Used `pytest` to run the test python file by GithubAction.
+1. Implemented python threading to put a finite number of tasks in the pool, the extra numbers of tasks will be put in a queue as a waiting list.
+2. Used Twitter API and python CV and PIL tools to grab the target user timeline tweets and draw them into pictures, then make video for each users. This is the single task as one thread in the threads pool.
+3. Used `flake8` to do some simple syntax checking and test. 
 
 ## Committed files
-- `arabic2roman.py`
+- `video.py`
 This is the main program to solve the number converting problem.
-I defined a ruction called `arabic2roman(num)`, the input `num` is arabic number ranges from 0 to 3999, and the fuctions will return the proper Roman number from `' '` to `'MMMCMXCIX'`. 
-If input arabic number is bigger than 3999 then it will return `'Number too large.'`.
 
-- `test_arabic2roman.py`
+
+- `compress.py` 
+This is the test program for `arabic2roman.py`. The function `test_0()` will be automatically runned by `pytest` tool. Test cases includes 0 to 3999 and an exeption case 4000.
+
+- `tw2video.py` 
 This is the test program for `arabic2roman.py`. The function `test_0()` will be automatically runned by `pytest` tool. Test cases includes 0 to 3999 and an exeption case 4000.
 
 ## Github Actions

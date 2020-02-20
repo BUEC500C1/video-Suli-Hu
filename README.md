@@ -5,46 +5,16 @@
 
 ## Committed files
 - `video.py`
-This is the main program to solve the number converting problem.
-
+This is the main program. You can change the userlist like adding new twitter user's screen names or change the number of tweets. During the run time, program will create a temp directaries to store pictures for diffent users, after that program will delete them. The only out put is the videos.
 
 - `compress.py` 
-This is the test program for `arabic2roman.py`. The function `test_0()` will be automatically runned by `pytest` tool. Test cases includes 0 to 3999 and an exeption case 4000.
+This is the interface of a single tweets to video task.
 
 - `tw2video.py` 
-This is the test program for `arabic2roman.py`. The function `test_0()` will be automatically runned by `pytest` tool. Test cases includes 0 to 3999 and an exeption case 4000.
+This is the kernel part of the program, includes all the details.
 
-## Github Actions
-### Continuous Build
-- Linter
-I used `flake8` as the linting tool to avoid merging code incompatible with project-supported configurations. The results can be found in GitHubAction.
+-`defult.ttf` and `font2.ttf`
+These are fonts that are used to make the video.
 
-
-### Continuous Build
-- Test
-I used `pytest` as the testing tool to do the black box test and unit test.
-The results can be found in GitHubAction.
-
-
-## Workflow
-1. Proposed a new feature.
-2. Create a new branch on git to develop the feature.
-3. Complete code and commit to feature branch.
-4. Ran CB (linter) on GitHub Action and revise the code until meet the linter requirements.
-5. Ran CI (unit tests) by purest on GitHub Action and fixed spotted bugs.
-6. Made a final review and ready to merge feature branch to stable branch.
-7. Merged into master and completed feature development.
-
-# Continuous-Integration
-Objective of this exercise is to learn continuous build process (CB) and continuous integration (CI). 
-You are expected to: 
-
-- Write python program to convert Arabic Numerals to Roman Numerals 
-- Integrate Continuous Build Process to check if your software in each development stage passed the build process. 
-- Integrate unit test and run the unit test in continuous integration process.
-
-For more informaiton, please check the assignment presentation.
-
-Deadline for completion of this project is January 29th, 2019. 
-You are expected to show all aspects of your work. This includes results of build process. 
-You are expected to use Github actively during this exercise.
+-`.avi` files
+These are the example out puts of the program.

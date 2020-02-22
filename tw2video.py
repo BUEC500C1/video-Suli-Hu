@@ -1,7 +1,6 @@
 # to grab tweets and write words into pics
 # Copyright Suli Hu sulihu@bu.edu
 import tweepy
-import json
 import os
 import cv2
 from PIL import Image

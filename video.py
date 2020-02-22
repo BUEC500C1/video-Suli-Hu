@@ -1,8 +1,7 @@
 import queue
 import threading
-import numpy as np
 import time
-import os
+
 
 import compress as comp
 
@@ -28,7 +27,7 @@ def add_thread(username, picpath, numOfTweets):
     return t
 
 def compressVideo(userlist,numOfTweets):
-    q = queue.Queue(100)
+    
     thread_list = []
     for user in userlist:
         thread_list.append(add_thread(user, './pic_'+user+'/', numOfTweets))
@@ -45,7 +44,7 @@ def compressVideo(userlist,numOfTweets):
     print(f'thread_list:{thread_list}')
     print('end')
     return 0
-
+q = queue.Queue(100)
 Compressor1 = VideoCompressor()
 u1 = ['@Shakespeare','@realDonaldTrump', '@Literature', '@langston_poems']
 compressVideo(u1,10)

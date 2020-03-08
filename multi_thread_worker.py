@@ -14,7 +14,8 @@ class MultiThreadWorker():
         t = threading.Thread(
             target=self.generate_video,
             args=(username, num_tweets))
-
+        print('how many:')
+        print(threading.active_count())
         num_active_workers = threading.active_count() - 3
         print(num_active_workers)
         print(self.num_workers)

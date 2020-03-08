@@ -42,10 +42,10 @@ def return_file():
 	# 	for f in files:
 	# 		print(f)
 	# 		os.remove(f)
-    os.system("rm videos/*")
+    os.system("rm video/*")
     return send_file('videos.zip', mimetype ='zip', attachment_filename = 'videos.zip', as_attachment=True)
 
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    app.run(host="0.0.0.0", port=5000)
+    app.run(debug=True)
+    app.run(host="0.0.0.0", port=80)

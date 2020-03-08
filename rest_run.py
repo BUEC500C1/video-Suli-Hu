@@ -13,24 +13,17 @@ def my_form():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    text = request.form['text']
+    text = request.form['userName']
+    twtNum = request.form['twtNum']
     processed_text = text
     mtw4 = MultiThreadWorker(2, 10)
-    mtw4.add_task(processed_text , 5)
+    mtw4.add_task(text , twtNum)
     print(processed_text)
     mtw4.start()
-    return processed_text
-
-@app.route('/file-download/')
-def file_download():
-    return render_template('file.html')
-
-@app.route('/return-file/')
-def return_file():
     zipFolder = zipfile.ZipFile('videos.zip','w', zipfile.ZIP_DEFLATED)
     for root, directs, files in os.walk('./video'):
-		# if os.path.exists('./video/.DS_Store'):
-		# 	os.remove('./video/.DS_Store')
+        # if os.path.exists('./video/.DS_Store'):
+        #   os.remove('./video/.DS_Store')
         for f in files:
             print(f)
             if str(f) == '.DS_Store':
@@ -38,12 +31,37 @@ def return_file():
             zipFolder.write('./video/' + str(f))
     zipFolder.close()
     print('zip close')
-	# for root, directs, files in os.walk('./video'):
-	# 	for f in files:
-	# 		print(f)
-	# 		os.remove(f)
+    # for root, directs, files in os.walk('./video'):
+    #   for f in files:
+    #       print(f)
+    #       os.remove(f)
     os.system("rm video/*")
     return send_file('videos.zip', mimetype ='zip', attachment_filename = 'videos.zip', as_attachment=True)
+    # return processed_text
+
+# @app.route('/file-download/')
+# def file_download():
+#     return render_template('file.html')
+
+# @app.route('/return-file/')
+# def return_file():
+#     zipFolder = zipfile.ZipFile('videos.zip','w', zipfile.ZIP_DEFLATED)
+#     for root, directs, files in os.walk('./video'):
+# 		# if os.path.exists('./video/.DS_Store'):
+# 		# 	os.remove('./video/.DS_Store')
+#         for f in files:
+#             print(f)
+#             if str(f) == '.DS_Store':
+#                 continue
+#             zipFolder.write('./video/' + str(f))
+#     zipFolder.close()
+#     print('zip close')
+# 	# for root, directs, files in os.walk('./video'):
+# 	# 	for f in files:
+# 	# 		print(f)
+# 	# 		os.remove(f)
+#     os.system("rm video/*")
+#     return send_file('videos.zip', mimetype ='zip', attachment_filename = 'videos.zip', as_attachment=True)
 
 
 if __name__ == '__main__':

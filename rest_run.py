@@ -1,7 +1,7 @@
 
 
 from flask import Flask, request, render_template, send_file
-import converter
+from multi_thread_worker import MultiThreadWorker
 import zipfile
 import os
 
@@ -14,8 +14,11 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
     text = request.form['text']
-    processed_text = text. upper()
-    converter.compressVideo([processed_text],10)
+    processed_text = text
+    mtw4 = MultiThreadWorker(2, 10)
+    mtw4.add_task(processed_text , 5)
+    print(processed_text)
+    mtw4.start()
     return processed_text
 
 @app.route('/file-download/')
@@ -24,7 +27,7 @@ def file_download():
 
 @app.route('/return-file/')
 def return_file():
-	zipFolder = zipfile.ZipFile('videos.zip','w', zipfile.ZIP_DEFLATED) 
+	zipFolder = zipfile.ZipFile('videos.zip','w', zipfile.ZIP_DEFLATED)
 	for root, directs, files in os.walk('./video'):
 		if os.path.exists('./video/.DS_Store'):
 			os.remove('./video/.DS_Store')

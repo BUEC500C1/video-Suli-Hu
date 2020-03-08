@@ -58,7 +58,7 @@ class Tweet2Video:
                 pic_filenames.append(file)
         pic_filenames.sort()
         video = cv2.VideoWriter(
-            f'./{videoname}.avi',
+            f'./video/{videoname}.avi',
             cv2.VideoWriter_fourcc(*'MJPG'),
             0.333,
             (1600, 500))
